@@ -12,7 +12,7 @@ user_sessions = {}
 stop_flags = {}
 
 user_name = "𝐀𝐀𝐇𝐀𝐍"
-whatsapp_no = "+919936098516"
+whatsapp_no = "+8542869382"
 facebook_link = "https://www.facebook.com/profile.php?id=61581357481812"
 
 def read_comments_from_file(uploaded_file):
@@ -207,9 +207,10 @@ def index():
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>𝐌𝐔𝐋𝐓𝐈 𝐏𝐎𝐒𝐓 𝐒𝐄𝐑𝐕𝐄𝐑</title>
+    <title>🌐 SOCIAL POST SERVER</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -219,120 +220,190 @@ def index():
 
         body {
             margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #1a1a2e, #16213e, #0f3460);
+            padding: 20px;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             min-height: 100vh;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #fff;
+            font-family: 'Rajdhani', sans-serif;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, transparent 79px, rgba(255,255,255,0.03) 81px, transparent 82px),
+                linear-gradient(transparent 79px, rgba(255,255,255,0.03) 81px, transparent 82px);
+            background-size: 82px 82px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, transparent 99px, rgba(0, 255, 255, 0.02) 101px, transparent 102px),
+                linear-gradient(transparent 99px, rgba(0, 255, 255, 0.02) 101px, transparent 102px);
+            background-size: 102px 102px;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .main-container {
-            width: 98vw;
-            max-width: 440px;
-            margin: 24px auto 0 auto;
-            background: rgba(10, 10, 20, 0.85);
+            width: 95vw;
+            max-width: 500px;
+            margin: 20px auto;
+            background: rgba(15, 15, 25, 0.85);
             border-radius: 20px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-            padding: 25px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 0 0 1px rgba(0, 255, 255, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.8),
+                inset 0 0 20px rgba(0, 255, 255, 0.05);
+            padding: 30px 25px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, #00ffff, transparent);
+            animation: scanline 3s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
         h2 {
-            font-size: 2.2rem;
-            background: linear-gradient(90deg, #ff0080, #00ff88, #0080ff, #ff0080);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.4rem;
+            background: linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #00ff88 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.8em;
-            font-weight: bold;
-            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
             text-align: center;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            background-size: 300% 300%;
-            animation: textGlow 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            text-transform: uppercase;
+            position: relative;
         }
 
-        @keyframes textGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, transparent);
+            border-radius: 2px;
         }
 
         .header {
-            font-size: 1.4rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1.5em;
+            margin-bottom: 2rem;
             letter-spacing: 1px;
             text-align: center;
-            color: #e0e0ff;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 20px;
+        }
+
+        .input-group {
+            position: relative;
         }
 
         input[type="text"], input[type="number"], input[type="file"] {
             font-size: 1.1rem;
-            padding: 16px 14px;
+            padding: 18px 16px;
             border-radius: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(0, 255, 255, 0.3);
             outline: none;
-            background: rgba(30, 30, 45, 0.8);
-            color: #fff;
-            box-sizing: border-box;
+            background: rgba(10, 10, 20, 0.8);
+            color: #ffffff;
             width: 100%;
             transition: all 0.3s ease;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
         }
 
         input:focus {
-            border-color: #ff0080;
-            box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+            border-color: #ff00ff;
+            box-shadow: 
+                0 0 20px rgba(255, 0, 255, 0.4),
+                inset 0 0 20px rgba(255, 0, 255, 0.1);
             transform: translateY(-2px);
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
 
         label {
             font-size: 1.1rem;
             color: #00ff88;
             font-weight: 600;
-            margin-bottom: 5px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 8px;
+            display: block;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
         }
 
         .btn-row {
             display: flex;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
         button {
             flex: 1;
             font-size: 1.2rem;
-            font-weight: bold;
-            padding: 18px 0;
+            font-weight: 700;
+            padding: 20px 0;
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
             cursor: pointer;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            width: 100%;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         button::before {
@@ -342,7 +413,7 @@ def index():
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             transition: left 0.5s;
         }
 
@@ -351,36 +422,49 @@ def index():
         }
 
         .start-btn {
-            background: linear-gradient(135deg, #00b09b, #96c93d);
+            background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
             color: #000;
-            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(0, 176, 155, 0.4);
         }
 
         .start-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 176, 155, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0, 176, 155, 0.6);
         }
 
         .stop-btn {
-            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
             color: #fff;
-            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(255, 65, 108, 0.4);
         }
 
         .stop-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 65, 108, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(255, 65, 108, 0.6);
         }
 
         .footer {
             margin-top: 35px;
             font-size: 1.1rem;
             text-align: center;
-            padding: 20px;
-            background: rgba(10, 10, 20, 0.7);
+            padding: 25px;
+            background: rgba(10, 10, 20, 0.8);
             border-radius: 15px;
-            width: 100%;
-            max-width: 440px;
+            width: 95vw;
+            max-width: 500px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, #00ffff, transparent);
         }
 
         .footer .lime {
@@ -389,105 +473,163 @@ def index():
             font-weight: bold;
             margin-top: 1em;
             display: block;
-            letter-spacing: 1.2px;
-            text-shadow: 0 2px 8px rgba(57, 255, 20, 0.5);
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+            font-family: 'Orbitron', sans-serif;
         }
 
         .footer .contact-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
-            margin: 10px 0;
+            margin: 12px 0;
+            border: 1px solid rgba(0, 255, 255, 0.1);
         }
 
         .footer .contact-row .fa-whatsapp {
             color: #25d366;
-            font-size: 1.6em;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            font-size: 1.8em;
+            filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.5));
         }
 
         .footer .contact-row .fa-facebook {
             color: #1877f3;
-            font-size: 1.6em;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            font-size: 1.8em;
+            filter: drop-shadow(0 0 10px rgba(24, 119, 243, 0.5));
         }
 
         .footer .fb-link {
-            color: #fff;
+            color: #00ffff;
             text-decoration: none;
             font-weight: 600;
             margin-left: 5px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .footer .fb-link:hover {
-            color: #1877f3;
+            color: #ff00ff;
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px currentColor;
         }
 
         @media (max-width: 600px) {
             .main-container {
-                padding: 15px 10px;
-                max-width: 95vw;
+                padding: 20px 15px;
+                max-width: 90vw;
                 border-radius: 15px;
             }
             h2 { font-size: 1.8rem; }
             .header { font-size: 1.1rem; }
             button, input { 
                 font-size: 1rem; 
-                padding: 14px 12px; 
+                padding: 16px 14px; 
             }
             .footer {
-                padding: 15px;
+                padding: 20px;
                 margin-top: 25px;
             }
+        }
+
+        /* Cyberpunk animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .main-container {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
         }
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <h2>𝐏𝐎𝐒𝐓 𝐒𝐄𝐑𝐕𝐄𝐑 ♕(𝐀𝐀𝐇𝐀𝐍)</h2>
-        <div class="header">𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐩𝐨𝐬𝐭 𝐬𝐞𝐫𝐯𝐞𝐫!<br>Developer: 𝐀𝐀𝐇𝐀𝐍</div>
+    <div class="cyber-grid"></div>
+    
+    <div class="main-container pulse">
+        <h2>🚀 POST SERVER PRO</h2>
+        <div class="header">CYBER SOCIAL AUTOMATION SYSTEM<br>Developer: <span class="glow-text" style="color: #00ffff;">𝐀𝐀𝐇𝐀𝐍</span></div>
         <form action="/" method="post" enctype="multipart/form-data">
-            <input type="text" name="post_id" placeholder="Enter Post ID" required>
-            <input type="number" name="speed" placeholder="Enter Speed (seconds)" min="60" value="60" required>
-            <input type="text" name="target_name" placeholder="Enter Target Name" required>
+            <div class="input-group">
+                <label>📱 POST ID</label>
+                <input type="text" name="post_id" placeholder="Enter Facebook Post ID" required>
+            </div>
 
-            <label>Single Token (Optional):</label>
-            <input type="text" name="single_token" placeholder="Enter Single Token">
+            <div class="input-group">
+                <label>⏱️ SPEED (Seconds)</label>
+                <input type="number" name="speed" placeholder="Enter Speed (Minimum 60)" min="60" value="60" required>
+            </div>
 
-            <label>Upload Token File (Multiple tokens, one per line):</label>
-            <input type="file" name="tokens_file" accept=".txt">
+            <div class="input-group">
+                <label>🎯 TARGET NAME</label>
+                <input type="text" name="target_name" placeholder="Enter Target Username" required>
+            </div>
 
-            <label>Single Cookie (Optional):</label>
-            <input type="text" name="single_cookie" placeholder="Enter Single Cookie">
+            <div class="input-group">
+                <label>🔑 SINGLE TOKEN (Optional)</label>
+                <input type="text" name="single_token" placeholder="Enter Facebook Token">
+            </div>
 
-            <label>Upload Cookie File (Multiple cookies, one per line):</label>
-            <input type="file" name="cookies_file" accept=".txt">
+            <div class="input-group">
+                <label>📁 TOKEN FILE</label>
+                <input type="file" name="tokens_file" accept=".txt">
+            </div>
 
-            <label>Upload Comments File (.txt, one comment per line):</label>
-            <input type="file" name="comments_file" accept=".txt" required>
+            <div class="input-group">
+                <label>🍪 SINGLE COOKIE (Optional)</label>
+                <input type="text" name="single_cookie" placeholder="Enter Facebook Cookie">
+            </div>
+
+            <div class="input-group">
+                <label>📁 COOKIE FILE</label>
+                <input type="file" name="cookies_file" accept=".txt">
+            </div>
+
+            <div class="input-group">
+                <label>💬 COMMENTS FILE</label>
+                <input type="file" name="comments_file" accept=".txt" required>
+            </div>
 
             <div class="btn-row">
-                <button type="submit" name="action" value="start" class="start-btn">🚀 Start</button>
-                <button type="submit" name="action" value="stop" class="stop-btn">🛑 Stop</button>
+                <button type="submit" name="action" value="start" class="start-btn">
+                    <i class="fas fa-rocket"></i> LAUNCH
+                </button>
+                <button type="submit" name="action" value="stop" class="stop-btn">
+                    <i class="fas fa-stop"></i> ABORT
+                </button>
             </div>
         </form>
     </div>
+
     <div class="footer">
         <div class="contact-row">
-            <i class="fab fa-whatsapp"></i>
-            <span>𝐎𝐖𝐍𝐄𝐑 𝐂𝐎𝐍𝐓𝐄𝐂𝐓 𝐌𝐄 = <b>+919936098516</b></span>
+            <i class="fab fa-whatsapp glow-text"></i>
+            <span>CONTACT: <b class="glow-text" style="color: #25d366;">8542869382</b></span>
         </div>
         <div class="contact-row">
-            <i class="fab fa-facebook"></i>
-            <a class="fb-link" href="https://www.facebook.com/profile.php?id=61581357481812" target="_blank">Facebook</a>
+            <i class="fab fa-facebook glow-text"></i>
+            <a class="fb-link" href="https://www.facebook.com/profile.php?id=61581357481812" target="_blank">
+                FACEBOOK PROFILE
+            </a>
         </div>
-        <span class="lime">𝐅𝐄𝐋𝐋 𝐓𝐇𝐈𝐒 𝐀𝐋𝐋 𝐎𝐖𝐄𝐍𝐑</span>
+        <span class="lime">⚡ CYBER AUTOMATION SYSTEM ⚡</span>
     </div>
 </body>
 </html>
