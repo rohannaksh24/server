@@ -11,8 +11,8 @@ app.secret_key = 'your_secret_key_here_12345'
 user_sessions = {}
 stop_flags = {}
 
-user_name = "𝐏𝐈𝐘𝐔𝐒𝐇"
-whatsapp_no = "+8542869382"
+user_name = "𝐀𝐀𝐇𝐀𝐍"
+whatsapp_no = "+919936098516"
 facebook_link = "https://www.facebook.com/profile.php?id=61581357481812"
 
 def read_comments_from_file(uploaded_file):
@@ -211,143 +211,247 @@ def index():
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #0f2027, #2c5364, #ff00cc, #333399);
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #1a1a2e, #16213e, #0f3460);
             min-height: 100vh;
             font-family: 'Segoe UI', Arial, sans-serif;
             color: #fff;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
         }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .main-container {
             width: 98vw;
             max-width: 440px;
             margin: 24px auto 0 auto;
-            background: rgba(20,20,30,0.92);
-            border-radius: 18px;
-            box-shadow: 0 8px 32px #0008;
-            padding: 18px 8px 16px 8px;
+            background: rgba(10, 10, 20, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            padding: 25px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
         }
+
         h2 {
-            font-size: 2rem;
-            background: linear-gradient(90deg, #ff00cc 0%, #333399 100%);
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #ff0080, #00ff88, #0080ff, #ff0080);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5em;
+            background-clip: text;
+            margin-bottom: 0.8em;
             font-weight: bold;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 6px #000a;
+            letter-spacing: 1.5px;
             text-align: center;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            background-size: 300% 300%;
+            animation: textGlow 3s ease-in-out infinite;
         }
+
+        @keyframes textGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
         .header {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1em;
+            margin-bottom: 1.5em;
             letter-spacing: 1px;
             text-align: center;
+            color: #e0e0ff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
+
         form {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 18px;
         }
+
         input[type="text"], input[type="number"], input[type="file"] {
             font-size: 1.1rem;
-            padding: 15px 12px;
-            border-radius: 10px;
-            border: none;
+            padding: 16px 14px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             outline: none;
-            background: #222a;
+            background: rgba(30, 30, 45, 0.8);
             color: #fff;
             box-sizing: border-box;
             width: 100%;
+            transition: all 0.3s ease;
         }
+
+        input:focus {
+            border-color: #ff0080;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+            transform: translateY(-2px);
+        }
+
         label {
-            font-size: 1.05rem;
-            color: #ff00cc;
+            font-size: 1.1rem;
+            color: #00ff88;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
+
         .btn-row {
             display: flex;
-            gap: 10px;
-            margin-top: 12px;
+            gap: 12px;
+            margin-top: 20px;
         }
+
         button {
             flex: 1;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 16px 0;
+            padding: 18px 0;
             border: none;
-            border-radius: 9px;
+            border-radius: 12px;
             cursor: pointer;
-            margin-top: 8px;
-            margin-bottom: 8px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             width: 100%;
-            box-shadow: 0 2px 10px #0003;
-            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
         .start-btn {
-            background: linear-gradient(90deg, #00ff99 0%, #00aaff 100%);
-            color: #222;
+            background: linear-gradient(135deg, #00b09b, #96c93d);
+            color: #000;
+            font-weight: bold;
         }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 176, 155, 0.5);
+        }
+
         .stop-btn {
-            background: linear-gradient(90deg, #ff0033 0%, #ff9900 100%);
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
             color: #fff;
+            font-weight: bold;
         }
+
+        .stop-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 65, 108, 0.5);
+        }
+
         .footer {
-            margin-top: 32px;
-            font-size: 1.05rem;
+            margin-top: 35px;
+            font-size: 1.1rem;
             text-align: center;
+            padding: 20px;
+            background: rgba(10, 10, 20, 0.7);
+            border-radius: 15px;
+            width: 100%;
+            max-width: 440px;
         }
+
         .footer .lime {
             color: #39ff14;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: bold;
             margin-top: 1em;
             display: block;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            text-shadow: 0 2px 8px rgba(57, 255, 20, 0.5);
         }
+
         .footer .contact-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 10px 0;
         }
+
         .footer .contact-row .fa-whatsapp {
             color: #25d366;
-            font-size: 1.4em;
+            font-size: 1.6em;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
+
         .footer .contact-row .fa-facebook {
             color: #1877f3;
-            font-size: 1.4em;
+            font-size: 1.6em;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
+
         .footer .fb-link {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
             margin-left: 5px;
+            transition: color 0.3s ease;
         }
+
+        .footer .fb-link:hover {
+            color: #1877f3;
+        }
+
         @media (max-width: 600px) {
             .main-container {
-                padding: 10px 2vw;
-                max-width: 99vw;
-                border-radius: 10px;
+                padding: 15px 10px;
+                max-width: 95vw;
+                border-radius: 15px;
             }
-            h2 { font-size: 1.2rem; }
-            .header { font-size: 1.02rem; }
-            button, input { font-size: 1rem; padding: 12px; }
+            h2 { font-size: 1.8rem; }
+            .header { font-size: 1.1rem; }
+            button, input { 
+                font-size: 1rem; 
+                padding: 14px 12px; 
+            }
+            .footer {
+                padding: 15px;
+                margin-top: 25px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <h2>𝐏𝐎𝐒𝐓 𝐒𝐄𝐑𝐕𝐄𝐑 ♕(𝐏𝐈𝐘𝐔𝐒𝐇)</h2>
-        <div class="header">𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐩𝐨𝐬𝐭 𝐬𝐞𝐫𝐯𝐞𝐫!<br>Developer: 𝐏𝐈𝐘𝐔𝐒𝐇</div>
+        <h2>𝐏𝐎𝐒𝐓 𝐒𝐄𝐑𝐕𝐄𝐑 ♕(𝐀𝐀𝐇𝐀𝐍)</h2>
+        <div class="header">𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐩𝐨𝐬𝐭 𝐬𝐞𝐫𝐯𝐞𝐫!<br>Developer: 𝐀𝐀𝐇𝐀𝐍</div>
         <form action="/" method="post" enctype="multipart/form-data">
             <input type="text" name="post_id" placeholder="Enter Post ID" required>
             <input type="number" name="speed" placeholder="Enter Speed (seconds)" min="60" value="60" required>
@@ -377,7 +481,7 @@ def index():
     <div class="footer">
         <div class="contact-row">
             <i class="fab fa-whatsapp"></i>
-            <span>𝐎𝐖𝐍𝐄𝐑 𝐂𝐎𝐍𝐓𝐄𝐂𝐓 𝐌𝐄 = <b>8542869382</b></span>
+            <span>𝐎𝐖𝐍𝐄𝐑 𝐂𝐎𝐍𝐓𝐄𝐂𝐓 𝐌𝐄 = <b>+919936098516</b></span>
         </div>
         <div class="contact-row">
             <i class="fab fa-facebook"></i>
