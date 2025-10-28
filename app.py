@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌 𝐎𝐅𝐅𝐋𝐈𝐍𝐄 𝐒𝐄𝐑𝐕𝐄𝐑</title>
+    <title>Instagram Message Sender</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -16,194 +16,198 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
-            padding: 30px;
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
+            padding: 20px;
             min-height: 100vh;
         }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         h1 {
             text-align: center;
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        h3 {
-            text-align: center;
-            font-size: 24px;
-            color: #f39c12;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
         .form-container {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            margin: 0 auto;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
         }
 
-        .form-container:hover {
-            transform: translateY(-5px);
-            transition: transform 0.3s ease;
+        .form-group {
+            margin-bottom: 1rem;
         }
 
-        .form-container label {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 8px;
+        label {
             display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
             font-weight: 600;
         }
 
-        .form-container input,
-        .form-container select,
-        .form-container button {
+        input, button {
             width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 12px;
-            border: 2px solid #e0e0e0;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
             font-size: 16px;
             transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
         }
 
-        .form-container input:focus,
-        .form-container select:focus {
+        input:focus {
             outline: none;
             border-color: #667eea;
-            box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
-            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
         }
 
-        .form-container button {
+        button {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
             border: none;
             cursor: pointer;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-top: 1rem;
         }
 
-        .form-container button:hover {
+        button:hover {
             background: linear-gradient(45deg, #764ba2, #667eea);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
         .message {
             background: rgba(255, 255, 255, 0.9);
             color: #333;
-            padding: 15px;
+            padding: 1rem;
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 1rem 0;
             text-align: center;
-            border-left: 5px solid #667eea;
+            border-left: 4px solid #667eea;
         }
 
         .status-check {
             text-align: center;
-            margin-top: 20px;
+            margin: 1rem 0;
         }
 
-        .status-check button {
+        .status-btn {
             background: linear-gradient(45deg, #f093fb, #f5576c);
-            color: white;
-            border: none;
             padding: 10px 20px;
             border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
+            width: auto;
+            margin: 0.5rem;
+        }
+
+        .status-result {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+            border-left: 4px solid #ffc107;
         }
 
         @media (max-width: 600px) {
-            .form-container {
-                padding: 20px;
-            }
-            
             h1 {
-                font-size: 28px;
+                font-size: 2rem;
             }
-            
-            body {
-                padding: 15px;
+            .form-container {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Instagram Offline Message Sender</h1>
+    <div class="container">
+        <h1>Instagram Message Sender</h1>
 
-    {% if message %}
+        {% if message %}
         <div class="message">
             <h3>{{ message }}</h3>
             {% if request_id %}
             <div class="status-check">
-                <button onclick="checkStatus('{{ request_id }}')">Check Status</button>
+                <button class="status-btn" onclick="checkStatus('{{ request_id }}')">🔄 Check Status</button>
                 <div id="statusResult"></div>
             </div>
             {% endif %}
         </div>
-    {% endif %}
+        {% endif %}
 
-    <div class="form-container">
-        <form action="/" method="POST" enctype="multipart/form-data">
-            <label for="username">Instagram Username:</label>
-            <input type="text" name="username" required placeholder="Enter Your Instagram Username" />
+        <div class="warning">
+            ⚠️ Important: Use responsibly. Ensure you have permission to send messages.
+        </div>
 
-            <label for="password">Instagram Password:</label>
-            <input type="password" name="password" required placeholder="Enter Your Instagram Password" />
+        <div class="form-container">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="username">Instagram Username</label>
+                    <input type="text" name="username" required placeholder="Your Instagram username">
+                </div>
 
-            <label for="recipient">Target Username/Group:</label>
-            <input type="text" name="recipient" required placeholder="Enter Target Username or Group Name" />
+                <div class="form-group">
+                    <label for="password">Instagram Password</label>
+                    <input type="password" name="password" required placeholder="Your Instagram password">
+                </div>
 
-            <label for="interval">Interval (in seconds):</label>
-            <input type="number" name="interval" required placeholder="Enter Interval (seconds)" min="5" value="10" />
+                <div class="form-group">
+                    <label for="recipient">Target Username</label>
+                    <input type="text" name="recipient" required placeholder="Target Instagram username">
+                </div>
 
-            <label for="haters_name">Sender Name:</label>
-            <input type="text" name="haters_name" required placeholder="Enter Sender Name" />
+                <div class="form-group">
+                    <label for="interval">Interval (seconds)</label>
+                    <input type="number" name="interval" required value="10" min="5" placeholder="Seconds between messages">
+                </div>
 
-            <label for="message_file">Upload Message File (TXT):</label>
-            <input type="file" name="message_file" accept=".txt" required />
+                <div class="form-group">
+                    <label for="haters_name">Sender Name</label>
+                    <input type="text" name="haters_name" required placeholder="Name to show in messages">
+                </div>
 
-            <button type="submit">🚀 Start Sending Messages</button>
-        </form>
+                <div class="form-group">
+                    <label for="message_file">Message File (.txt)</label>
+                    <input type="file" name="message_file" accept=".txt" required>
+                </div>
+
+                <button type="submit">🚀 Start Sending Messages</button>
+            </form>
+        </div>
     </div>
 
     <script>
         function checkStatus(requestId) {
-            fetch(`/status/${requestId}`)
+            fetch('/status/' + requestId)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('statusResult').innerHTML = 
-                        `<p><strong>Status:</strong> ${data.status}</p>`;
+                    const statusDiv = document.getElementById('statusResult');
+                    statusDiv.innerHTML = `<div class="status-result">${data.status}</div>`;
                 })
                 .catch(error => {
                     document.getElementById('statusResult').innerHTML = 
-                        '<p style="color: red;">Error checking status</p>';
+                        '<div style="color: red; padding: 10px;">Error checking status</div>';
                 });
         }
 
-        // Auto-check status if there's a request ID
         {% if request_id %}
-        setTimeout(() => checkStatus('{{ request_id }}'), 5000);
+        setTimeout(() => checkStatus('{{ request_id }}'), 3000);
+        setInterval(() => checkStatus('{{ request_id }}'), 5000);
         {% endif %}
     </script>
 </body>
